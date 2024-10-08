@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  padding: 2em;
+  background-color:#f8fafc;
+  font-family: sans-serif;
+  width: 70%;
+  margin: 0 auto;
+  
+
+}
+.navigation{
+  justify-content: space-between;
+  gap: 10px;
+
+}
+li{
+  width:25% ;
+  border-radius: 0.25rem  ;
+}
+
+ul li:hover {
+  background-color: white;
+}
+
+input:focus{
+  outline: none;
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination-button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
