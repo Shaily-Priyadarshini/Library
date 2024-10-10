@@ -1,27 +1,38 @@
 import './App.css'
 import Heading from './components/Heading';
-import Filter from './components/Filter';
 import Button from './components/Button';
-import NavigationBar from './components/NavigationBar';
 import Featured from './components/Featured';
 import Trending from './components/Trending';
-import featured from './utils/featured';
-import { useState } from 'react';
+import Error from './components/Error'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Kpi from './components/Kpi';
+import Layouts from './components/Layouts';
+import Storyboards from './components/Storyboards';
 
 function App() {
-  const [filteredList, setFilteredList] = useState(featured)
-
+  
   return (
-    <div className='app text-center'>
+    <main className='app text-center'>
       <Button name={'Request'}/>
       <Heading />
-      <Filter filteredList={filteredList} setFilteredList={setFilteredList}/>
-      <NavigationBar/>
-      <Featured filteredList={filteredList}/>
+      
+      
+      <BrowserRouter>
+        <Routes>
+        
+          <Route path='/' element={<Featured  />} />
+          <Route path='kpi' element={<Kpi />} />
+          <Route path='layouts' element={<Layouts />} />
+          <Route path='storyboards' element={<Storyboards />} />
+          <Route path='*' element={<Error />} />
+
+        </Routes>
+      </BrowserRouter>
       <Trending />
 
-    </div>
+    </main>
   )
 }
+
 
 export default App
